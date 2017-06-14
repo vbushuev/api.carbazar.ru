@@ -1,3 +1,5 @@
 logs/
 store/
 *.log
+
+cookie-jar
