@@ -68,7 +68,9 @@ try{
                 $apikey = new Apikey;
                 $session = new Session(["session_id"=>$request->session_id]);
                 $apikey->find($session->apikey_id);
-                $apikey->decrease();
+                $account = new Account;
+                $account->find($apikey->account_id);
+                $account->decrease();
             }
             catch(\Exception $e){
                 Log::debug($e->getMessage());
