@@ -12,3 +12,4 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ /index.php?action=$1 [NC,L,QSA]
 </IfModule>
+SetEnv noconntimeout 1

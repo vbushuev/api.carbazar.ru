@@ -60,8 +60,11 @@ while($resp["code"]==200){
         $tryfind = new Request;
         try{
             $tryfind->find(["vin"=>$vin,"status"=>"success"]);
-            new Request(["code"=>"200","session_id"=>$auth->getSession()->id,"status"=>"success","vin"=>$vin,"data"=>$tryfind->data,"message"=>""]);
+            $db_request = new Request(["code"=>"200","session_id"=>$auth->getSession()->id,"status"=>"success","vin"=>$vin,"data"=>$tryfind->data,"message"=>""]);
             $auth->getAccount()->decrease();
+            $resp = json_decode($db_request->data,true);
+            $resp["request"] = $_REQUEST;
+            //$resp["response"] =
         }
         catch(\Exception $e){
             $request = new Request(["session_id"=>$auth->getSession()->id,"vin"=>$vin,"code"=>$resp["code"],"status"=>"progress","data"=>""]);

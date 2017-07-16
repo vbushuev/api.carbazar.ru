@@ -57,6 +57,18 @@ $cbConfig = [
             //"path"=>"../tutmodno/media/com_ksenmart/images/product/original/"
             "path"=>"../dixipay/wp-content/uploads"
         ]
+    ],
+    "http_"=>[
+        "proxy"=>[
+            ["url"=>"127.0.0.1:9150","type"=>"socks4"],
+            // ["url"=>"217.126.5.224:8080","type"=>"http"],
+            // ["url"=>"151.237.80.166:8080","type"=>"http"],
+            // ["url"=>"198.50.219.230:3128","type"=>"http"],
+            // ["url"=>"198.50.212.32:8799","type"=>"http"],
+            // ["url"=>"144.217.48.75:8080","type"=>"http"],
+            // ["url"=>"149.56.147.33:80","type"=>"http"],
+            // ["url"=>"89.36.215.70:1189","type"=>"http"]
+        ]
     ]
 ];
 ?>
